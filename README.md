@@ -10,10 +10,11 @@ git clone https://github.com/JeremyEudy/Tutoring_Database
 Or replace ```~/Tutoring_Database/``` with a different valid location.
 
 ### Prerequisites
-This project depends on MongoDB.pm and MongoDB current.
+This project depends on MongoDB.pm, MongoDB current, and Pymongo.
 ```
 sudo apt-get install MongoDB
 cpan MongoDB
+sudo pip install pymongo
 ```
 ### Usage
 InvoiceUpload.pl
