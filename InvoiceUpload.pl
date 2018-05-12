@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 #Author: Jeremy Eudy
-#Usage: InvoiceUpload.pl
+#Usage: perl InvoiceUpload.pl
 use warnings;
 use diagnostics;
 use MongoDB;
