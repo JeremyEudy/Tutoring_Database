@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 #Author: Jeremy Eudy
-#Usage: clear; perl UsersUpload.pl
+#Usage: perl UserUpload.pl
 use warnings;
 use diagnostics;
 use MongoDB;
