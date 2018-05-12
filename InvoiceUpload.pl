@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 #Author: Jeremy Eudy
-#Usage: clear; perl Upload\ New\ Data.pl
+#Usage: perl InvoiceUpload.pl
 use warnings;
 use diagnostics;
 use MongoDB;
@@ -49,7 +49,7 @@ print "$deleteCount file(s) deleted.\n"
 #Number(int), Recipient(str), Issue Date(str), Item(str), Description(str), Cost(float), Quantity(int), Line Total(float),
 #Total(float), Balance(float), Due Date(str)
 
-#Parse CSVs in $dir into MongoDB.
+#Parse invoices in $dir into MongoDB.
 my @invoice;
 for ( my $i = 0; $i<$dirCount; $i++  ) {
 	my $file = $dirFiles[$i];
@@ -57,6 +57,8 @@ for ( my $i = 0; $i<$dirCount; $i++  ) {
 	while ( <$info> ) {
 		push ( @invoice, $_ );
 	}
+	#This will need to be reworked as it will apply to invoices instead of CSVs.
+	#Todo: build regular expression to parse through invoice and grab fields for building archived list of invoices.
 	my ( $invNum, $recipient, $issue, @item, @descrip, @cost, @quantity, @line, $total, $balance, $due ) = split /\;/, $invoice[$i];
 	$invColl->insert( {
 		"Number"=> $invNum,

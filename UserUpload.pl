@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 #Author: Jeremy Eudy
-#Usage: clear; perl UsersUpload.pl
+#Usage: perl UserUpload.pl
 use warnings;
 use diagnostics;
 use MongoDB;
@@ -30,6 +30,7 @@ while( <$info> ) {
 my $rowCount = @csv;
 for ( my $i = 0; $i < $rowCount; $i++ ) {
 	my ( $fName, $lName, $email, $phoneNum ) = split /\;/, $csv[$i];
+	$fName = uc $fName; $lName = uc $lName; $email = uc $email;
 	$userColl->insert( {
 		"First Name" => $fName,
 		"Last Name" => $lName,
