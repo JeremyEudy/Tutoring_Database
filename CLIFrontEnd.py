@@ -154,11 +154,11 @@ while(True):
 			"First Name": userFName,
 			"Last Name": userLName,
 			"Email": userEmail,
-			"Phone Number": userNum
-			"Student 1" = student1
-			"Student 2" = student2
-			"Student 3" = student3
-			"Student 4" = student4
+			"Phone Number": userNum,
+			"Student 1" : student1,
+			"Student 2" : student2,
+			"Student 3" : student3,
+			"Student 4" : student4
 		}
 		docID = db.Users.insert_one(userDict).inserted_id
 		print("\nUser added:\n")
